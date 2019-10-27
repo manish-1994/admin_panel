@@ -1,0 +1,22 @@
+mat-sidenav-container{
+  height:800px;
+}
+
+mat-sidenav,mat-sidenav-content{
+  padding:30px;
+}
+
+mat-sidenav{
+  background-color:#3498db;
+  width:200px;
+}
+
+a{
+  margin-top:100px;
+  color:white;
+  text-decoration:none;
+}
+
+a:hover{
+  color:#d2dae2;
+}
