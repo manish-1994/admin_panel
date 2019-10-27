@@ -1,0 +1,63 @@
+
+<div style="text-align:center">
+  <h3>Notice Fields</h3>
+
+<mat-card class="color">
+<mat-form-field>
+  <mat-label>Title</mat-label>
+  <input [(ngModel)]="Title" name="Title" #title = "ngModel" maxlength="70" matInput type="text" required>
+</mat-form-field>
+     <div *ngIf="title.touched && !title.valid ">
+       <div class="field" *ngIf="title.errors.required">Please enter the Title</div>
+     </div><br><br>
+
+
+  <mat-form-field>
+    <mat-label>Description</mat-label>
+    <input matInput [(ngModel)]="Description" name="Description" #descriptions = "ngModel" type="text" required>
+  </mat-form-field>
+  <div *ngIf="descriptions.touched && !descriptions.valid">
+    <div *ngIf="descriptions.errors.required" class="field">Please enter the decription field </div>
+  </div>
+  <br><br>
+
+  <mat-form-field class="color1">
+    <mat-label>Designation</mat-label>
+    <mat-select required   [(ngModel)]="Designation" name="Designation">
+      <mat-option *ngFor="let desig of designation" [value]="desig.value">
+        {{desig.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <br><br>
+
+
+ <!-- <mat-form-field>
+    <mat-label>Date</mat-label>
+    <input matInput [matDatepicker]="picker" [(ngModel)]="Date" name="Date">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field><br><br>
+-->
+
+  <label>Documents</label><br>
+    <input type="file"  required (change)="upload($event)"><br><br>
+
+
+  <div *ngIf="uploadProgress | async as pct" style="color:orange;background-color: white;height:5px">
+    <mat-progress-bar mode="determinate" color="accent" [value]="pct" max="100"></mat-progress-bar>
+    {{pct | number}}%
+  </div><br><br>
+
+  <div *ngIf="snapshot | async as snap" style=" display:none">
+<!--
+   Bytes Transferred:  {{snap.bytesTransferred}} of {{snap.totalBytes}}
+-->
+  </div>
+
+
+  <button mat-raised-button value="submit" (click)="addata()" class="btn">Submit</button>
+</mat-card>
+
+</div>
+
