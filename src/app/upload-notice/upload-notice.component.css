@@ -1,0 +1,46 @@
+.color{
+  background-image: linear-gradient(-90deg,#3498db,#2980b9);
+  color:white;
+  margin-right:70px;
+  margin-left:70px;
+  margin-bottom:50px;
+}
+
+div{
+  color:white;
+  background-image: linear-gradient(-90deg,#ecf0f1,#bdc3c7);
+  border:2px solid #ecf0f1;
+  border-radius:8px;
+  font-family: SimSun, sans-serif;
+  font-weight:bolder;
+
+}
+
+mat-label{
+  color:#ecf0f1;
+}
+label{
+  color:#ecf0f1;
+}
+.btn {
+  color: #4a69bd;
+  background-color: white;
+}
+
+.btn:hover{
+  color:white;
+  background-color:#4a69bd;
+  transition:0.5s;
+}
+
+.color1{
+  color:white;
+}
+
+.field{
+display:block;
+  color: #c0392b;
+  margin-right:80px;
+  margin-left:80px;
+
+}
